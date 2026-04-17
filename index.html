@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coyote Tattoo | Estudio de Tatuajes en Zaragoza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --accent: #d4a373;
+            --dark: #0a0a0a;
+            --light: #f4f1de;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .nav-link {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .bg-accent { background-color: var(--accent); }
+        .text-accent { color: var(--accent); }
+        .border-accent { border-color: var(--accent); }
+
+        .hero-bg {
+            /* Imagen actualizada según petición del usuario */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://www.tonyblacktattoo.com/wp-content/uploads/2021/08/tatuajes-realistas-lobos-header.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .legal-page { display: none; }
+        .active-page { display: block; }
+        
+        #cookie-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <nav class="fixed w-full z-50 bg-black/90 border-b border-white/10 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold tracking-widest text-accent">COYOTE TATTOO</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" onclick="showMain()" class="nav-link hover:text-accent transition">Inicio</a>
+                        <a href="#estudio" onclick="showMain()" class="nav-link hover:text-accent transition">Estudio</a>
+                        <a href="#trabajos" onclick="showMain()" class="nav-link hover:text-accent transition">Trabajos</a>
+                        <a href="#contacto" onclick="showMain()" class="nav-link hover:text-accent transition">Contacto</a>
+                        <a href="tel:876443274" class="bg-accent text-black px-4 py-2 rounded-sm font-bold hover:bg-opacity-80 transition">Cita: 876 443 274</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center px-4">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-tighter leading-tight">Arte Eterno en <br class="hidden md:block"> <span class="text-accent">Zaragoza</span></h1>
+                <p class="text-xl md:text-2xl mb-10 font-light text-gray-200 drop-shadow-lg">Excelencia técnica y realismo en cada trazo. Tu historia, grabada para siempre.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contacto" class="bg-accent text-black px-10 py-4 font-bold rounded-sm uppercase tracking-widest hover:scale-105 transition shadow-xl">Reservar Cita</a>
+                    <a href="https://instagram.com" target="_blank" class="border border-white/50 backdrop-blur-sm px-10 py-4 font-bold rounded-sm uppercase tracking-widest hover:bg-white hover:text-black transition">Ver Trabajos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats / Quick Info -->
+        <section class="py-12 bg-zinc-900 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <p class="text-3xl font-bold text-accent">5.0</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Puntuación Google</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-accent">126+</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Reseñas Clientes</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-accent">Zaragoza</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Ubicación Central</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-accent">Pro</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Material Estéril</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="estudio" class="py-24 px-4 bg-black">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1">
+                    <img src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?q=80&w=800&auto=format&fit=crop" alt="Estudio de Tatuajes Interior" class="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-4xl font-bold mb-6">El Estudio: Coyote Tattoo</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Situado en el corazón de Zaragoza, en la Calle de Mainar 8, Coyote Tattoo es un referente del tatuaje de autor. Nos enfocamos en ofrecer un entorno profesional donde la higiene y la precisión artística convergen.</p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">Dominamos desde el realismo en blanco y negro hasta el color vibrante y líneas finas minimalistas. Cada tatuaje es una obra única diseñada específicamente para ti.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Higiene Hospitalaria</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Diseños Exclusivos</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Tintas Homologadas</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Atención Especializada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Gallery -->
+        <section id="trabajos" class="py-24 bg-zinc-950">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Nuestros Trabajos</h2>
+                    <div class="w-20 h-1 bg-accent mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="group relative overflow-hidden aspect-square">
+                        <img src="https://www.esdip.com/wp-content/uploads/2022/01/daniel-paredes_tatuaje-blackwork.jpg" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <p class="text-white font-bold">Blackwork</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square">
+                        <img src="https://i.pinimg.com/originals/7b/c6/1f/7bc61fc7a05d23c82ff5c88243bc57dd.jpg" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <p class="text-white font-bold">Realismo</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square">
+                        <img src="https://www.esdip.com/wp-content/uploads/2022/12/tatuaje-tradicional_mujer-y-calavera_tamy-love.jpg" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <p class="text-white font-bold">Tradicional</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square">
+                        <img src="https://wildwomantattoo.com/wp-content/uploads/2024/03/Geometria-4-767x1024.webp" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <p class="text-white font-bold">Geométrico</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square">
+                        <img src="https://nobleart.com/storage/fine-line-tatuajes-pequenos-minimalistas-min-1731684445KplNb.png" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <p class="text-white font-bold">Fine Line</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square">
+                        <img src="https://lanzadera-digital.b-cdn.net/gangatattoolosangeles.com/Styles/Color%20Original%20Designs/bg-image-2.webp" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <p class="text-white font-bold">Color</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Map -->
+        <section id="contacto" class="py-24 px-4 bg-black">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-8 text-accent">¿Hablamos de tu próximo tatuaje?</h2>
+                        <div class="space-y-6 mb-12">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-accent/20 p-3 rounded-full"><i class="fas fa-map-marker-alt text-accent"></i></div>
+                                <div>
+                                    <h4 class="font-bold">Dirección</h4>
+                                    <p class="text-gray-400">C. de Mainar, 8, 50014 Zaragoza, España</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-accent/20 p-3 rounded-full"><i class="fas fa-phone text-accent"></i></div>
+                                <div>
+                                    <h4 class="font-bold">Teléfono</h4>
+                                    <p class="text-gray-400">876 44 32 74</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-accent/20 p-3 rounded-full"><i class="fas fa-clock text-accent"></i></div>
+                                <div>
+                                    <h4 class="font-bold">Horario</h4>
+                                    <p class="text-gray-400">Lunes a Viernes: 10:00–13:30, 17:00–20:00</p>
+                                    <p class="text-gray-400">Sábados: 10:00–14:00 | Domingos: Cerrado</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Map Embed -->
+                        <div class="h-64 rounded-lg overflow-hidden border border-white/10">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.455246733235!2d-0.8718608!3d41.666986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5915004655f46f%3A0xe671954593121b6!2sC.%20de%20Mainar%2C%208%2C%2050014%20Zaragoza!5e0!3m2!1ses!2ses!4v1710000000000!5m2!1ses!2ses" 
+                                width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <form class="bg-zinc-900 p-8 rounded-lg shadow-xl" onsubmit="event.preventDefault(); alert('Gracias por contactar. Te responderemos pronto.');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm mb-2 text-gray-400 uppercase">Nombre</label>
+                                <input type="text" required class="w-full bg-black border border-white/10 p-3 focus:border-accent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm mb-2 text-gray-400 uppercase">Email</label>
+                                <input type="email" required class="w-full bg-black border border-white/10 p-3 focus:border-accent outline-none">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm mb-2 text-gray-400 uppercase">¿Qué idea tienes?</label>
+                            <textarea rows="4" required class="w-full bg-black border border-white/10 p-3 focus:border-accent outline-none" placeholder="Cuéntanos tu idea, estilo y zona del cuerpo..."></textarea>
+                        </div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <input type="checkbox" required id="policy" class="accent-accent">
+                            <label for="policy" class="text-xs text-gray-500">He leído y acepto la <a href="#" onclick="showLegal('privacidad')" class="underline">política de privacidad</a>.</label>
+                        </div>
+                        <button class="w-full bg-accent text-black font-bold py-4 uppercase tracking-widest hover:bg-opacity-80 transition">Solicitar Cita</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LEGAL PAGES -->
+    <section id="legal-section" class="pt-32 pb-24 px-4 bg-black min-h-screen hidden">
+        <div class="max-w-4xl mx-auto bg-zinc-900 p-8 md:p-12 rounded-lg border border-white/5">
+            <button onclick="showMain()" class="mb-8 text-accent hover:underline flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </button>
+            
+            <div id="legal-aviso" class="legal-page">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Aviso Legal</h2>
+                <div class="text-gray-400 space-y-4 text-sm leading-relaxed">
+                    <p>En cumplimiento con el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSICE), se exponen los siguientes datos identificativos:</p>
+                    <p><strong>Titular:</strong> Coyote Tattoo Zaragoza<br>
+                    <strong>Responsable:</strong> Gestión de Tatuajes S.L. (Ejemplo)<br>
+                    <strong>Dirección:</strong> C. de Mainar, 8, 50014 Zaragoza<br>
+                    <strong>Teléfono:</strong> 876 44 32 74<br>
+                    <strong>Email:</strong> contacto@coyotetattoozaragoza.com</p>
+                </div>
+            </div>
+
+            <div id="legal-privacidad" class="legal-page">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Política de Privacidad</h2>
+                <div class="text-gray-400 space-y-4 text-sm leading-relaxed">
+                    <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD), informamos que sus datos recogidos mediante el formulario de contacto serán tratados exclusivamente para la gestión de su solicitud.</p>
+                    <p>Sus datos no serán cedidos a terceros salvo obligación legal y serán conservados el tiempo estrictamente necesario para cumplir con su propósito.</p>
+                </div>
+            </div>
+
+            <div id="legal-cookies" class="legal-page">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Política de Cookies</h2>
+                <div class="text-gray-400 space-y-4 text-sm leading-relaxed">
+                    <p>Este sitio web utiliza cookies propias y de terceros para optimizar la navegación. Las cookies utilizadas son de carácter técnico y analítico.</p>
+                    <p>Puede gestionar el uso de cookies en la configuración de su navegador web en cualquier momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/5 py-12 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-accent mb-2 uppercase">COYOTE TATTOO</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Zaragoza - Calidad y Seguridad</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="https://instagram.com" class="text-2xl hover:text-accent transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" class="text-2xl hover:text-accent transition"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/34876443274" class="text-2xl hover:text-accent transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-500 uppercase">
+                <a href="#" onclick="showLegal('aviso')" class="hover:text-accent">Aviso Legal</a>
+                <a href="#" onclick="showLegal('privacidad')" class="hover:text-accent">Privacidad</a>
+                <a href="#" onclick="showLegal('cookies')" class="hover:text-accent">Cookies</a>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-xs text-gray-700">
+            &copy; 2024 Coyote Tattoo Zaragoza. El arte que llevas contigo.
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="bg-zinc-900 border-t border-accent/30 p-4 shadow-2xl">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-gray-400">Este sitio utiliza cookies para asegurar la mejor experiencia. <a href="#" onclick="showLegal('cookies')" class="underline">Saber más</a>.</p>
+            <div class="flex gap-2">
+                <button onclick="acceptCookies()" class="bg-accent text-black px-4 py-1 text-xs font-bold uppercase rounded-sm">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Navigation Logic ---
+        function showLegal(pageId) {
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('legal-section').classList.remove('hidden');
+            document.querySelectorAll('.legal-page').forEach(page => page.classList.remove('active-page'));
+            document.getElementById('legal-' + pageId).classList.add('active-page');
+            window.scrollTo(0, 0);
+        }
+
+        function showMain() {
+            document.getElementById('main-content').classList.remove('hidden');
+            document.getElementById('legal-section').classList.add('hidden');
+        }
+
+        // --- Mobile Menu ---
+        const btn = document.getElementById('mobile-menu-button');
+        btn.addEventListener('click', () => {
+            const navLinks = document.querySelector('.ml-10');
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-20');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('bg-black');
+            navLinks.classList.toggle('p-8');
+            navLinks.classList.toggle('space-y-4');
+            navLinks.classList.toggle('border-b');
+            navLinks.classList.toggle('border-white/10');
+        });
+
+        // --- Cookies Logic ---
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.onload = () => {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        };
+    </script>
+</body>
+</html>
